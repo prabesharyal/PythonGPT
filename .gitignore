@@ -1,0 +1,9 @@
+#Skipping .gitignore file from upload
+.gitignore
+
+
+#Skipping .env file from upload
+.env
+
+
+#I am doing this to make my github green :)
