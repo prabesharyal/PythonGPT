@@ -1,17 +1,20 @@
 # Set up the Telegram bot
-#bot = telegram.Bot('6088146021:AAHzfrDc53rGBsc9HOzNP0gxNUvzTmdSzEM')
 
 # Set up the OpenAI API
-#openai.api_key = ('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')
 import telegram
 import openai
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters , CallbackContext
 
+#This will load API keys from '.env' file
+from dotenv import load_dotenv
+load_dotenv()
+
+
 # Set up the Telegram bot
-bot = telegram.Bot('6088146021:AAHzfrDc53rGBsc9HOzNP0gxNUvzTmdSzEM')
+bot = telegram.Bot(os.getenv('TG_BOT_TOKEN'))
 
 # Set up the OpenAI API
-openai.api_key = ('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')
+openai.api_key = os.getenv('OPENAI_API_KEY')
 
 # Define a function to generate responses using ChatGPT
 def generate_response(text):
